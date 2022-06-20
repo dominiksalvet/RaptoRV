@@ -1,21 +1,41 @@
 //------------------------------------------------------------------------------
-// Copyright 2021 Dominik Salvet
-// https://github.com/dominiksalvet/raptorv
+// Copyright 2022 Dominik Salvet
+// https://github.com/dominiksalvet/riscv-soc
 //------------------------------------------------------------------------------
 
 module core (
     input rst_l,
     input clk,
 
-    output inst_re, // todo: memory operation may fail
-    output [31:0] inst_addr,
-    input [31:0] inst,
+    //------------------------- AXI4-Lite interface ----------------------------
+    // Write address channel
+    output          axi_awvalid,
+    input           axi_awready,
+    output [31:0]   axi_awaddr,
+    output [2:0]    axi_awprot,
 
-    output data_access,
-    output data_we,
-    output [31:0] data_addr,
-    output [31:0] wr_data,
-    input [31:0] rd_data
+    // Write data channel
+    output          axi_wvalid,
+    input           axi_wready,
+    output [31:0]   axi_wdata,
+    output [3:0]    axi_wstrb,
+
+    // Write response channel
+    input           axi_bvalid,
+    output          axi_bready,
+    input  [1:0]    axi_bresp,
+
+    // Read address channel
+    output          axi_arvalid,
+    input           axi_arready,
+    output [31:0]   axi_araddr,
+    output [2:0]    axi_arprot,
+
+    // Read data channel
+    input           axi_rvalid,
+    output          axi_rready,
+    input  [31:0]   axi_rdata,
+    input  [1:0]    axi_rresp
 );
-
+    
 endmodule
