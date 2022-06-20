@@ -1,7 +1,4 @@
-//------------------------------------------------------------------------------
-// Copyright 2021 Dominik Salvet
-// https://github.com/dominiksalvet/raptorv
-//------------------------------------------------------------------------------
+// https://github.com/dominiksalvet/RaptoRV
 
 module if_stage #(
     parameter RST_PC_VAL = 0

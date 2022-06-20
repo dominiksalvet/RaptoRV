@@ -1,13 +1,10 @@
-//------------------------------------------------------------------------------
-// Copyright 2022 Dominik Salvet
-// https://github.com/dominiksalvet/riscv-soc
-//------------------------------------------------------------------------------
+// https://github.com/dominiksalvet/RaptoRV
 
 module core (
     input rst_l,
     input clk,
 
-    //------------------------- AXI4-Lite interface ----------------------------
+    //---------------------- AXI4-Lite memory interface ------------------------
     // Write address channel
     output          axi_awvalid,
     input           axi_awready,
